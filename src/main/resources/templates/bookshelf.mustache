@@ -1,0 +1,42 @@
+{{>layout/header}}
+
+<h1>user's Bookshelf</h1>
+
+<div class="col-md-12">
+    <div class="row">
+        <div class="col-md-6">
+            <a href="/bookshelf/save" role="button" class="btn btn-primary">+</a>
+            <a href="/bookshelf/delete" role="button" class="btn btn-primary">-</a>
+        </div>
+    </div>
+    <br>
+    <!--목록 출력 영역-->
+    <table class="table table-horizontal table-bordered">
+        <thead class="thead-strong">
+        <tr>
+                <th>번호</th>
+                <th>책 제목</th>
+                <th>저자</th>
+                <th>출판사</th>
+                <th>카테고리</th>
+                <th>등록날짜</th>
+                <th>완료날짜</th>
+        </tr>
+        </thead>
+        <tbody id="tbody">
+        {{#posts}}
+            <tr>
+                <td>{{id}}</td>
+                <td>{{bookTitle}}</td>
+                <td>{{author}}</td>
+                <td>{{publisher}}</td>
+                <td>{{category}}</td>
+                <td>{{createdDate}}</td>
+                <td>{{modifiedDate}}</td>
+            </tr>
+        {{/posts}}
+        </tbody>
+    </table>
+</div>
+
+{{>layout/footer}}
