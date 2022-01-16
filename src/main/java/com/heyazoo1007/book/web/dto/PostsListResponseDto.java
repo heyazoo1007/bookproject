@@ -1,6 +1,6 @@
 package com.heyazoo1007.book.web.dto;
 
-import com.heyazoo1007.book.domain.Posts;
+import com.heyazoo1007.book.domain.posts.Posts;
 import lombok.Getter;
 
 import java.time.LocalDateTime;
@@ -11,7 +11,7 @@ public class PostsListResponseDto {
     private String bookTitle;
     private String author;
     private String publisher;
-    private int category;
+    private String category;
     private LocalDateTime createdDate;
     private LocalDateTime modifiedDate;
 

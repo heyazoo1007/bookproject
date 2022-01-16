@@ -13,7 +13,8 @@ var main={
             bookTitle: $('#bookTitle').val(),
             author:$('#author').val(),
             publisher:$('#publisher').val(),
-            category:$('category').val()
+            category:$('select[name=category]').val(),
+            review:$('#review').val()
         };
 
         $.ajax({
@@ -29,6 +30,31 @@ var main={
             alert(JSON.stringify(error));
         });
     },
+   update: function(){
+        var data={
+            bookTitle: $('#bookTitle').val(),
+            author: $('#author').val(),
+            publisher: $('#publisher').val(),
+            category: $('#select[name=category]').val(),
+            review: $('review').val(),
+
+        };
+        var id=$('#id').val();
+
+        $.ajax({
+                    type:'Put',
+                    url: '/api/v1/posts'+id,
+                    dataType: 'json',
+                    contentType: 'application/json; charset=utf-8',
+                    data:JSON.stringify(data)
+                }).done(function(){
+                    alert('책이 수정되었습니다.');
+                    window.location.href='/bookshelf/{bookTitle}';
+                }).fail(function(error){
+                    alert(JSON.stringify(error));
+                });
+   },
+
    delete: function(){
         var id=$('#id').val();
 

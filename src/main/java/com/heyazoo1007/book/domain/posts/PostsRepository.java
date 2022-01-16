@@ -1,5 +1,6 @@
-package com.heyazoo1007.book.domain;
+package com.heyazoo1007.book.domain.posts;
 
+import com.heyazoo1007.book.domain.posts.Posts;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 

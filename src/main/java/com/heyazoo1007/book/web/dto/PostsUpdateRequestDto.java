@@ -11,13 +11,15 @@ public class PostsUpdateRequestDto {
     private String bookTitle;
     private String author;
     private String publisher;
-    private int category;
+    private String category;
+    private String review;
 
     @Builder
-    public PostsUpdateRequestDto(String bookTitle,String author, String publisher, int category){
+    public PostsUpdateRequestDto(String bookTitle,String author, String publisher, String category,String review){
         this.bookTitle=bookTitle;
         this.author=author;
         this.publisher=publisher;
         this.category=category;
+        this.review=review;
     }
 }

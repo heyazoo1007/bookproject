@@ -1,12 +1,12 @@
 package com.heyazoo1007.book.web;
 
+import com.heyazoo1007.book.config.auth.LoginUser;
+import com.heyazoo1007.book.config.auth.dto.SessionUser;
 import com.heyazoo1007.book.service.posts.PostsService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Required;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 
 @RequiredArgsConstructor
 @Controller
@@ -14,9 +14,13 @@ public class IndexController {
 
     private final PostsService postsService;
 
-    @GetMapping("/")
-    public String index(){
 
+    @GetMapping("/")
+    public String index(Model model, @LoginUser SessionUser user){
+
+        if(user!=null){
+            model.addAttribute("userName", user.getName());
+        }
         return "index";
     }
 
@@ -32,5 +36,20 @@ public class IndexController {
         return "bookshelf-save";
     }
 
+    @GetMapping("/bookshelf/{bookTitle}")
+    public String bookshelfBookTitle(){
+        return "bookshelf-bookTitle";
+    }
+
+    @GetMapping("/bookshelf/update")
+    public String bookshelfUpdate(){
+        return "bookshelf-update";
+
+    }
+
+
 
 }
+
+
+

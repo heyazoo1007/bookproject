@@ -1,12 +1,15 @@
 {{>layout/header}}
 
-<h1>user's Bookshelf</h1>
+<h1> My Bookshelf</h1>
 
 <div class="col-md-12">
     <div class="row">
         <div class="col-md-6">
-            <a href="/bookshelf/save" role="button" class="btn btn-primary">+</a>
-            <a href="/bookshelf/delete" role="button" class="btn btn-primary">-</a>
+            <a href="/" role="button"  class="btn btn-primary">main</a>
+        </div>
+        <div class="col-md-6" >
+            <a href="/bookshelf/delete" role="button" class="btn btn-primary margin-left: 5px" style="float:right">-</a>
+            <a href="/bookshelf/save" role="button" class="btn btn-primary margin-left: 5px" style="float:right">+</a>
         </div>
     </div>
     <br>
@@ -15,7 +18,7 @@
         <thead class="thead-strong">
         <tr>
                 <th>번호</th>
-                <th>책 제목</th>
+                <th >책 제목</th>
                 <th>저자</th>
                 <th>출판사</th>
                 <th>카테고리</th>
@@ -27,7 +30,7 @@
         {{#posts}}
             <tr>
                 <td>{{id}}</td>
-                <td>{{bookTitle}}</td>
+                <td onclick="location.href='/bookshelf/{{bookTitle}}'">{{bookTitle}}</td>
                 <td>{{author}}</td>
                 <td>{{publisher}}</td>
                 <td>{{category}}</td>

@@ -1,7 +1,7 @@
 package com.heyazoo1007.book.service.posts;
 
-import com.heyazoo1007.book.domain.Posts;
-import com.heyazoo1007.book.domain.PostsRepository;
+import com.heyazoo1007.book.domain.posts.Posts;
+import com.heyazoo1007.book.domain.posts.PostsRepository;
 import com.heyazoo1007.book.web.dto.PostsListResponseDto;
 import com.heyazoo1007.book.web.dto.PostsResponseDto;
 import com.heyazoo1007.book.web.dto.PostsSaveRequestDto;
@@ -11,7 +11,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
@@ -30,7 +29,7 @@ public class PostsService {
     public Long update(Long id, PostsUpdateRequestDto requestDto){
         Posts posts = postsRepository.findById(id)
                 .orElseThrow(()->new IllegalArgumentException("해당 게시글이 없습니다. id="+id));
-        posts.update(requestDto.getBookTitle(),requestDto.getAuthor(), requestDto.getPublisher(), requestDto.getCategory());
+        posts.update(requestDto.getBookTitle(),requestDto.getAuthor(), requestDto.getPublisher(), requestDto.getCategory(),requestDto.getReview());
         return id;
     }
 
