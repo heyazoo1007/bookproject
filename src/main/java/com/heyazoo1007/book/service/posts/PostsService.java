@@ -40,10 +40,15 @@ public class PostsService {
     }
 
     @Transactional(readOnly = true)
-    public List<PostsListResponseDto> findAllDesc(){
-        return postsRepository.findALLDesc().stream()
+    public List<PostsListResponseDto> findAllAsc(){
+        return postsRepository.findALLAsc().stream()
                 .map(PostsListResponseDto :: new)
                 .collect(Collectors.toList());
+    }
+
+    @Transactional(readOnly = true)
+    public Posts findReview(){
+        return postsRepository.findReview();
     }
 
     @Transactional

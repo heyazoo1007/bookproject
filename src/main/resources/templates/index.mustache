@@ -3,12 +3,11 @@
     <h1>My Book</h1>
     <div class="col-md-12">
         <div class="row">
-
-            <div class="col-md-6">
+            <div class="col-md-12" align="right">
                 <a href="/bookshelf" role="button" class="btn btn-primary" >My Bookshelf</a>
                 {{#userName}}
+                    <a href="/logout" class="btn btn-info active" role="button">Logout</a>
                     Logged in as: <span id="user">{{userName}}</span>
-                <a href="/logout" class="btn btn-info active" role="button">Logout</a>
                 {{/userName}}
                 {{^userName}}
                     <a href="/oauth2/authorization/google" class ="btn btn-success active" role="button" >Google Login</a>

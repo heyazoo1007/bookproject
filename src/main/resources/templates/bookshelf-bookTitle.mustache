@@ -1,15 +1,41 @@
 {{>layout/header}}
 
+
 <h1>
     Book Review
 </h1>
 
-<div class="col-md-12" >
-    <div class="col-md-4" style="style=position:absolute; right:0px; bottom:0px;">
-        <a href="/bookshelf/update" role="button" class="btn btn-primary" id="btn-update">수정</a>
+<div class="col-md-4" >
+    <p><table class="table table-horizontal table-bordered" align="left" width="300" >
+        <thead class="thead-strong" align="left">
+        {{#posts}}
+        <tr>
+            <th><center>{{id}}</center></th>
+            <th><center>{{bookTitle}}</center></th>
+        </tr>
+        {{/posts}}
+        </thead>
+    </table> </p>
 
-    </div>
-
+</div>
+<div class="col-md-8">
+    <p><table class="table table-horizontal table-bordered"align="left" width="400">
+    <thead class="thead-strong" align="right">
+    {{#posts}}
+        <th><center>{{author}}</center></th>
+        <th><center>{{publisher}}</center></th>
+        <th><center>{{category}}</center></th>
+    {{/posts}}
+    </thead>
+</table></p>
+</div>
+<p><div class="col-md-12" align="middle">
+    {{#posts}}
+       <textarea readonly rows="10" style="width:100%" onresize="none">{{review}}</textarea>
+    {{/posts}}
+</div></p>
+<div class="col-md-12" align="right" style="style=position:absolute; right:0px; bottom:0px;">
+    <a href="/bookshelf/update" role="button" class="btn btn-primary" id="btn-update">수정</a>
 </div>
 
 

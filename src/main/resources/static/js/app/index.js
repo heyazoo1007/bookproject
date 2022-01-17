@@ -4,6 +4,9 @@ var main={
         $('#btn-save').on('click',function(){
             _this.save();
         });
+        $('#btn-update').on('click',function(){
+            _this.update();
+        });
         $('btn-delete').on('click', function(){
             _this.delete();
         });
@@ -36,7 +39,7 @@ var main={
             author: $('#author').val(),
             publisher: $('#publisher').val(),
             category: $('#select[name=category]').val(),
-            review: $('review').val(),
+            review: $('#review').val()
 
         };
         var id=$('#id').val();
