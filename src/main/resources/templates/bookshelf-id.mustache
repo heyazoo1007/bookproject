@@ -6,14 +6,14 @@
 </h1>
 
 <div class="col-md-4" >
+
+    <a href="/bookshelf" role="button" class="btn btn-secondary">cancel</a>
     <p><table class="table table-horizontal table-bordered" align="left" width="300" >
         <thead class="thead-strong" align="left">
-        {{#posts}}
         <tr>
-            <th><center>{{id}}</center></th>
-            <th><center>{{bookTitle}}</center></th>
+            <th><center>{{posts.id}}</center></th>
+            <th><center>{{posts.bookTitle}}</center></th>
         </tr>
-        {{/posts}}
         </thead>
     </table> </p>
 
@@ -21,21 +21,23 @@
 <div class="col-md-8">
     <p><table class="table table-horizontal table-bordered"align="left" width="400">
     <thead class="thead-strong" align="right">
-    {{#posts}}
-        <th><center>{{author}}</center></th>
-        <th><center>{{publisher}}</center></th>
-        <th><center>{{category}}</center></th>
-    {{/posts}}
+
+        <th><center>{{posts.author}}</center></th>
+        <th><center>{{posts.publisher}}</center></th>
+        <th><center>{{posts.category}}</center></th>
+
     </thead>
 </table></p>
 </div>
 <p><div class="col-md-12" align="middle">
-    {{#posts}}
-       <textarea readonly rows="10" style="width:100%" onresize="none">{{review}}</textarea>
-    {{/posts}}
+       <textarea readonly rows="10" style="width:100%" onresize="none">{{posts.review}}</textarea>
+
 </div></p>
 <div class="col-md-12" align="right" style="style=position:absolute; right:0px; bottom:0px;">
-    <a href="/bookshelf/update" role="button" class="btn btn-primary" id="btn-update">수정</a>
+
+    <a href="/bookshelf/update/{{posts.id}}" role="button" class="btn btn-primary" >update</a>
+    <button type="button" class="btn btn-danger" id="btn-delete">delete</button>
+
 </div>
 
 

@@ -7,7 +7,7 @@ var main={
         $('#btn-update').on('click',function(){
             _this.update();
         });
-        $('btn-delete').on('click', function(){
+        $('#btn-delete').on('click', function(){
             _this.delete();
         });
     },
@@ -38,40 +38,40 @@ var main={
             bookTitle: $('#bookTitle').val(),
             author: $('#author').val(),
             publisher: $('#publisher').val(),
-            category: $('#select[name=category]').val(),
+            category: $('#category').val(),
             review: $('#review').val()
 
         };
         var id=$('#id').val();
 
         $.ajax({
-                    type:'Put',
-                    url: '/api/v1/posts'+id,
-                    dataType: 'json',
-                    contentType: 'application/json; charset=utf-8',
-                    data:JSON.stringify(data)
-                }).done(function(){
-                    alert('책이 수정되었습니다.');
-                    window.location.href='/bookshelf/{bookTitle}';
-                }).fail(function(error){
-                    alert(JSON.stringify(error));
-                });
+             type:'Put',
+             url: '/api/v1/posts/'+id,
+             dataType: 'json',
+             contentType: 'application/json; charset=utf-8',
+             data:JSON.stringify(data)
+        }).done(function(){
+            alert('책이 수정되었습니다.');
+            window.location.href='/bookshelf/'+id;
+        }).fail(function(error){
+            alert(JSON.stringify(error));
+        });
    },
 
    delete: function(){
         var id=$('#id').val();
 
         $.ajax({
-        type:'DELETE',
-        url: '/api/v1/posts/'+id,
-        dataType: 'Json',
-        contentType: 'application/json; charset= utf-8'
-        }).done(function(){
-            alert('글이 삭제되었습니다.');
-            window.location.href='/bookshelf'
-        }).fail(function (error){
+             type:'DELETE',
+             url: '/api/v1/posts/'+id,
+             dataType: 'json',
+             contentType: 'application/json; charset= utf-8'
+            }).done(function(){
+                alert('게시글이 삭제되었습니다.');
+                window.location.href='/bookshelf';
+            }).fail(function (error){
              alert(JSON.stringify(error));
-       });
+            });
    }
 
 };

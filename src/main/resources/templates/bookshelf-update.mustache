@@ -1,40 +1,47 @@
 {{>layout/header}}
 
 <h1>게시글 수정</h1>
-<div class ="col-md-12">
+<p><div class ="col-md-12" align="middle">
     <div class="col-md-4">
         <form>
             <div class="form-group">
                 <label for="id">책 번호</label>
                 <input type="text" class="form-control"
-                       id="id" value="{{post.id}}" readonly>
+                       id="id" value={{post.id}} readonly>
             </div>
             <div class="form-group">
                 <label for="bookTitle">책 제목</label>
                 <input type="text" class="form-control"
-                       id="bookTitle" value="{{post.bookTitle}}" readonly>
+                       id="bookTitle" value="{{post.bookTitle}}">
             </div>
             <div class="form-group">
                 <label for="author">저자 </label>
                 <input type="text" class="form-control"
-                       id="author" value="{{post.author}}" readonly>
+                       id="author" value="{{post.author}}" >
             </div>
             <div class="form-group">
                 <label for="publisher">출판사</label>
                 <input type="text" class="form-control"
-                       id="publisher" value="{{post.publisher}}" readonly>
+                       id="publisher" value="{{post.publisher}}" >
             </div>
             <div class="form-group">
                 <label for="category">카테고리</label>
-                <input type="text" class="form-control"
-                       id="category" value="{{post.category}}" readonly>
+                <input type="text" class="form-control" id="category" value="{{post.category}}" readonly>
             </div>
             <div class="form-group">
                 <label for="review">후기</label>
-                <input type="text" class="form-control"
-                       id="review" value="{{post.review}}" readonly>
+                <input type="text" class="form-control" id="review" value="{{post.review}}">
             </div>
         </form>
     </div>
-</div>
+</div></p>
+
+<p><div class="col-md-12" align="right">
+
+    <button type="button" class="btn btn-primary" id="btn-update">수정 완료</button>
+</div></p>
+
+
 {{>layout/footer}}
+
+

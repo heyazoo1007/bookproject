@@ -8,7 +8,6 @@
             <a href="/" role="button"  class="btn btn-primary">main</a>
         </div>
         <div class="col-md-6" >
-            <a href="/bookshelf/delete" role="button" class="btn btn-primary margin-left: 5px" style="float:right"> - </a>
             <a href="/bookshelf/save" role="button" class="btn btn-primary margin-left: 5px" style="float:right"> + </a>
         </div>
     </div>
@@ -24,18 +23,20 @@
                 <th>카테고리</th>
                 <th>등록날짜</th>
                 <th>완료날짜</th>
+
         </tr>
         </thead>
         <tbody id="tbody">
         {{#posts}}
             <tr>
                 <td>{{id}}</td>
-                <td onclick="location.href='/bookshelf/{{bookTitle}}'">{{bookTitle}}</td>
+                <td onclick="location.href='/bookshelf/{{id}}'">{{bookTitle}}</td>
                 <td>{{author}}</td>
                 <td>{{publisher}}</td>
                 <td>{{category}}</td>
                 <td>{{createdDate}}</td>
                 <td>{{modifiedDate}}</td>
+
             </tr>
         {{/posts}}
         </tbody>
