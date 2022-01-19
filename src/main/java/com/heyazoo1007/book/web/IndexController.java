@@ -6,6 +6,7 @@ import com.heyazoo1007.book.service.posts.PostsService;
 import com.heyazoo1007.book.web.dto.PostsListResponseDto;
 import com.heyazoo1007.book.web.dto.PostsResponseDto;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -40,15 +41,14 @@ public class IndexController {
         return "bookshelf-save";
     }
 
-    @GetMapping("/bookshelf/{bookTitle}")
-    public String bookshelfBookTitle(Model model){
-        model.addAttribute("posts",postsService.findAllAsc());
-        model.addAttribute("posts",postsService.findReview());
+    @GetMapping("/bookshelf/{id}")
+    public String bookshelfId( @PathVariable Long id,Model model){
+        model.addAttribute("posts",postsService.findById(id));
 
-        return "bookshelf-bookTitle";
+        return "bookshelf-id";
     }
 
-    @GetMapping("/bookshelf/update")
+    @GetMapping("/bookshelf/update/{id}")
     public String bookshelfUpdate(@PathVariable Long id, Model model){
 
         PostsResponseDto dto=postsService.findById(id);
