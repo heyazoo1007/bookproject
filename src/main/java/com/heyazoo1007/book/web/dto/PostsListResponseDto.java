@@ -15,6 +15,7 @@ public class PostsListResponseDto {
     private LocalDateTime createdDate;
     private LocalDateTime modifiedDate;
 
+
     public PostsListResponseDto(Posts entity){
         this.id= entity.getId();
         this.bookTitle= entity.getBookTitle();
@@ -23,6 +24,7 @@ public class PostsListResponseDto {
         this.category= entity.getCategory();
         this.createdDate=entity.getCreatedDate();
         this.modifiedDate=entity.getModifiedDate();
+
 
     }
 

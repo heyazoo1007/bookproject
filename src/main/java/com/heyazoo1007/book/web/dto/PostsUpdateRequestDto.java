@@ -15,7 +15,7 @@ public class PostsUpdateRequestDto {
     private String review;
 
     @Builder
-    public PostsUpdateRequestDto(String bookTitle,String author, String publisher, String category,String review){
+    public PostsUpdateRequestDto(String bookTitle,String author, String publisher, String category, String review){
         this.bookTitle=bookTitle;
         this.author=author;
         this.publisher=publisher;
