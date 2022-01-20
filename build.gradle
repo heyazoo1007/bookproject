@@ -1,6 +1,6 @@
 buildscript{
     ext{
-        springBootVersion='2.1.7.RELEASE'
+        springBootVersion='2.1.9.RELEASE'
     }
     repositories{
         mavenCentral()
@@ -23,6 +23,7 @@ sourceCompatibility= 1.8
 
 repositories {
     mavenCentral()
+    jcenter()
 }
 dependencies {
     compile('org.springframework.boot:spring-boot-starter-web')
@@ -34,10 +35,10 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter-mustache')
     compile('org.springframework.boot:spring-boot-starter-oauth2-client')
     compile('org.springframework.session:spring-session-jdbc')
+    compile('mysql:mysql-connector-java')
+
+    testCompile('org.springframework.boot:spring-boot-starter-test')
     testCompile('org.springframework.security:spring-security-test')
 
 }
 
-test {
-    useJUnitPlatform()
-}
