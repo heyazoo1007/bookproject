@@ -34,8 +34,6 @@ public class PostsRepositoryTest {
 
         postsRepository.save(Posts.builder()
                 .bookTitle(bookTitle)
-
-
                 .author("heyazoo1007@naver.com")
                 .category("문학")
                 .publisher("publisher")
